@@ -19,6 +19,7 @@ RUN apt -y install php libapache2-mod-php
 RUN apt -y install php-zip php-xml php-json
 
 RUN cd /var/www/html && \
-    git clone https://github.com/kanboard/kanboard.git
+    git clone https://github.com/kanboard/kanboard.git &&
+    chown -R www-data.www-data kanboard
 
 RUN cat /etc/passwd
